@@ -26,7 +26,7 @@ MetaData.Voxel_Size_X = double(OmeMeta.getPixelsPhysicalSizeX(0).value(ome.units
 MetaData.Voxel_Size_Y = double(OmeMeta.getPixelsPhysicalSizeY(0).value(ome.units.UNITS.MICROM)); % in µm
 MetaData.Voxel_Size_Z = double(OmeMeta.getPixelsPhysicalSizeZ(0).value(ome.units.UNITS.MICROM)); % in µm
 
-Image=cell(MetaData.Num_of_Ch+1,1);
+Image=cell(1,MetaData.Num_of_Ch+1);
 Image{end}=MetaData;
 
 iSeries = 1;
