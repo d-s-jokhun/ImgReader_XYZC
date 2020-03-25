@@ -12,8 +12,8 @@ function Image=ImgReader_XYZC(Filename,Z,C)
 
 script_path=matlab.desktop.editor.getActiveFilename;
 path = extractBetween(script_path,1,'\ImgReader_XYZC.m');
-path = genpath(path);
-addpath(string(path));
+path = genpath(string(path));
+addpath(path);
 
 Reader = bfGetReader (Filename);
 OmeMeta = Reader.getMetadataStore();
@@ -22,9 +22,9 @@ MetaData.Num_of_Ch = OmeMeta.getPixelsSizeC(0).getValue();
 MetaData.Num_of_Pixels_Z = OmeMeta.getPixelsSizeZ(0).getValue();
 MetaData.Num_of_Pixels_X = OmeMeta.getPixelsSizeX(0).getValue();
 MetaData.Num_of_Pixels_Y = OmeMeta.getPixelsSizeY(0).getValue();
-MetaData.Voxel_Size_X = double(OmeMeta.getPixelsPhysicalSizeX(0).value(ome.units.UNITS.MICROM)); % in µm
-MetaData.Voxel_Size_Y = double(OmeMeta.getPixelsPhysicalSizeY(0).value(ome.units.UNITS.MICROM)); % in µm
-MetaData.Voxel_Size_Z = double(OmeMeta.getPixelsPhysicalSizeZ(0).value(ome.units.UNITS.MICROM)); % in µm
+MetaData.Voxel_Size_X = double(OmeMeta.getPixelsPhysicalSizeX(0).value(ome.units.UNITS.MICROM)); % in Âµm
+MetaData.Voxel_Size_Y = double(OmeMeta.getPixelsPhysicalSizeY(0).value(ome.units.UNITS.MICROM)); % in Âµm
+MetaData.Voxel_Size_Z = double(OmeMeta.getPixelsPhysicalSizeZ(0).value(ome.units.UNITS.MICROM)); % in Âµm
 
 Image=cell(MetaData.Num_of_Ch+1,1);
 Image{end}=MetaData;
