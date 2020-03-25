@@ -35,7 +35,7 @@ iT=1;
 Reader.setSeries(iSeries - 1);
 
 
-if ~exist('Ch','var')
+if ~exist('C','var')
     C=1:MetaData.Num_of_Ch;
 else
     if numel(nonzeros(C))<1
