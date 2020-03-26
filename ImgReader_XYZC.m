@@ -1,6 +1,7 @@
 
 %%% written by D.S.JOKHUN on 10/04/2015
 
+tryl
 % Ch corresponds to the channels that have to be read. [] or 0 will cause 
 % the function to read all the channels.
 % Z corresponds to the z slices that have to be read. [] or 0 will cause 
