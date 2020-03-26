@@ -10,11 +10,6 @@
 
 function Image=ImgReader_XYZC(Filename,Z,C)
 
-script_path=matlab.desktop.editor.getActiveFilename;
-path = extractBetween(script_path,1,'\ImgReader_XYZC.m');
-path = genpath(string(path));
-addpath(path);
-
 Reader = bfGetReader (Filename);
 OmeMeta = Reader.getMetadataStore();
 
